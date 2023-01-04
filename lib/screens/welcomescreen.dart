@@ -111,7 +111,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             },
                             icon: const Icon(
                               Icons.arrow_circle_right,
-                              color: Color.fromARGB(255, 213, 169, 8),
+                              color: Colors.blue,
                               size: 40.0,
                             )),
                       ],
@@ -174,11 +174,11 @@ class _SecondScreenState extends State<SecondScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    'Shop for quality Unisex wears \n right in the comfort of your home',
+                    'Shop for quality Unisex wears right in the comfort of your home',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: 20.0,
                       fontFamily: 'Dongle',
                       height: 0.7,
                     ),
@@ -207,7 +207,7 @@ class _SecondScreenState extends State<SecondScreen> {
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height * 0.06,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 213, 169, 8),
+                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(15)),
                       child: const Center(
                         child: Text(
