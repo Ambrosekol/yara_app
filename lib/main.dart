@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yara_app/screens/loginscreen.dart';
 import 'package:yara_app/screens/welcomescreen.dart';
 
 void main() {
@@ -12,9 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // initialRoute: 'firstWelcomeScreen',
       routes: {
         'firstWelcomScreen': (context) => const WelcomeScreen(),
-        'secondWelcomeScreen': (context) => const SecondScreen()
+        'secondWelcomeScreen': (context) => const SecondScreen(),
+        'loginScreen': (context) => const LoginScreen()
       },
       home: const Scaffold(
         body: WelcomeScreen(),
