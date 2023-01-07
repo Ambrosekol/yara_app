@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget {
         'loginScreen': (context) => const LoginScreen(),
         'fg_password': (context) => const ForgotPassword(),
       },
-      home: const Scaffold(
-        body: WelcomeScreen(),
-      ),
+      home: WelcomeScreen(),
     );
   }
 }

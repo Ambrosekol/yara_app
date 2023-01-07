@@ -12,6 +12,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   final InputBorder _underlinedBorder = UnderlineInputBorder(
       borderSide: const BorderSide(color: Colors.white, width: 2.0),
       borderRadius: BorderRadius.circular(10.0));
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _digitController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,12 +77,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         cursorColor: _brandColor,
                         cursorHeight: 25.0,
                         // enabled: true,
-                        // controller: _emailController,
+                        controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: inputDecorationWidget(
                           null,
                           icon: Icons.email,
-                          identifier: 'Email',
+                          identifier: 'Email Address',
                         ),
                       ),
                       const SizedBox(height: 40.0),
@@ -90,8 +92,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         cursorColor: _brandColor,
                         cursorHeight: 25.0,
                         // enabled: true,
-                        // controller: _emailController,
+                        controller: _digitController,
                         obscureText: false,
+                        keyboardType: TextInputType.number,
                         // obscuringCharacter: '*',
                         decoration: inputDecorationWidget(
                           null,
@@ -152,7 +155,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                margin: const EdgeInsets.only(top: 25),
+                margin: const EdgeInsets.only(top: 30.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

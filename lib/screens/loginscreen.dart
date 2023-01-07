@@ -35,12 +35,12 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  // stops: [0.1, 0.2],
+                  stops: [0.1, 0.6],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
                     Color.fromARGB(225, 35, 34, 34),
-                    Color.fromARGB(223, 0, 0, 0)
+                    Color.fromARGB(255, 0, 0, 0)
                   ],
                 ),
               ),
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         cursorHeight: 25.0,
                         // enabled: true,
                         // controller: _emailController,
-                        obscureText: true,
+                        obscureText: passwordisHidden,
                         obscuringCharacter: '*',
                         decoration: inputDecorationWidget(
                           IconButton(
