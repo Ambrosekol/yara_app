@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yara_app/screens/forgot_password.dart';
 import 'package:yara_app/screens/loginscreen.dart';
 import 'package:yara_app/screens/welcomescreen.dart';
 
@@ -13,11 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // initialRoute: 'firstWelcomeScreen',
       routes: {
         'firstWelcomScreen': (context) => const WelcomeScreen(),
         'secondWelcomeScreen': (context) => const SecondScreen(),
-        'loginScreen': (context) => const LoginScreen()
+        'loginScreen': (context) => const LoginScreen(),
+        'fg_password': (context) => const ForgotPassword(),
       },
       home: const Scaffold(
         body: WelcomeScreen(),
