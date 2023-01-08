@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                   percentageColor: Colors.black,
                   titleColor: Colors.white,
                   buttonColor: Colors.black,
+                  //need to face this
                   callback: () => print('object'),
                   discountTitle: 'Super discount',
                   buttonText: 'Grab Now!',
