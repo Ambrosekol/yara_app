@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yara_app/screens/forgot_password.dart';
+import 'package:yara_app/screens/homepage.dart';
 import 'package:yara_app/screens/loginscreen.dart';
 import 'package:yara_app/screens/welcomescreen.dart';
 
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         'secondWelcomeScreen': (context) => const SecondScreen(),
         'loginScreen': (context) => const LoginScreen(),
         'fg_password': (context) => const ForgotPassword(),
+        'homePage': (context) => const HomePage(),
       },
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
