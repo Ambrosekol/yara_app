@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         'fg_password': (context) => const ForgotPassword(),
         'homePage': (context) => const HomePage(),
       },
-      home: const WelcomeScreen(),
+      home: const HomePage(),
     );
   }
 }
