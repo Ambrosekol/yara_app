@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           //     colors: [Color.fromARGB(79, 83, 80, 80), Colors.black]),
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/sliderman.jpg'),
+            image: AssetImage('assets/images/woman.jpg'),
           ),
         ),
         child: Stack(
@@ -35,12 +35,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    stops: [0.1, 0.6],
+                    stops: [0.3, 0.6],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color.fromARGB(225, 35, 34, 34),
-                      Color.fromARGB(255, 0, 0, 0),
+                      Color.fromARGB(0, 35, 34, 34),
+                      Color.fromARGB(230, 0, 0, 0),
                     ]),
               ),
             ),
@@ -88,7 +88,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           size: 25.0,
                         ),
                         Icon(
-                          Icons.circle_outlined,
+                          Icons.circle,
                           color: Colors.white,
                           size: 15.0,
                         )
@@ -165,7 +165,7 @@ class _SecondScreenState extends State<SecondScreen> {
           //     colors: [Color.fromARGB(79, 83, 80, 80), Colors.black]),
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/sliderwoman.jpg'),
+            image: AssetImage('assets/images/shopping.jpg'),
           ),
         ),
         child: Stack(
@@ -173,12 +173,12 @@ class _SecondScreenState extends State<SecondScreen> {
             Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    stops: [0.1, 0.6],
+                    stops: [0.3, 0.6],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color.fromARGB(225, 35, 34, 34),
-                      Color.fromARGB(255, 0, 0, 0)
+                      Color.fromARGB(0, 35, 34, 34),
+                      Color.fromARGB(230, 0, 0, 0),
                     ]),
               ),
             ),
@@ -192,7 +192,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     Icons.chevron_left,
                     size: 30.0,
                   ),
-                  color: const Color.fromARGB(255, 255, 184, 4),
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -222,7 +222,7 @@ class _SecondScreenState extends State<SecondScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Icon(
-                          Icons.circle_outlined,
+                          Icons.circle,
                           color: Colors.white,
                           size: 15.0,
                         ),

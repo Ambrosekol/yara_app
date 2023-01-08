@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           //     colors: [Color.fromARGB(79, 83, 80, 80), Colors.black]),
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/loginbgimage.jpg'),
+            image: AssetImage('assets/images/sliderman.jpg'),
           ),
         ),
         child: Stack(
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color.fromARGB(225, 35, 34, 34),
+                    Color.fromARGB(113, 35, 34, 34),
                     Color.fromARGB(255, 0, 0, 0)
                   ],
                 ),
