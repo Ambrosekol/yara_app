@@ -99,6 +99,10 @@ flutter:
     - family: Rubik
       fonts:
         - asset: assets/fonts/RubikMonoOne-Regular.ttf
+    
+    - family: Fira
+      fonts:
+        - asset: assets/fonts/FiraSans-Light.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

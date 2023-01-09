@@ -1,12 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 Widget catalogueItem(String name, Function callback) {
-  return ElevatedButton(onPressed: () => callback, child: Text(name));
+  return ElevatedButton(
+    style: ButtonStyle(
+      // splashFactory: InkSplash.splashFactory,
+      // elevation: MaterialStateProperty.resolveWith((states) => 5),
+      backgroundColor:
+          MaterialStateProperty.resolveWith((states) => Colors.white),
+      side: MaterialStateProperty.resolveWith(
+        (states) => const BorderSide(
+            color: Color.fromARGB(244, 248, 210, 116), width: 1.0),
+      ),
+      shape: MaterialStateProperty.resolveWith((states) =>
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(35.0))),
+      enableFeedback: true,
+    ),
+    onPressed: () => callback,
+    child: Text(
+      name,
+      style: const TextStyle(color: Colors.black),
+    ),
+  );
 }
 
-Widget catalogueSlider() {
+Widget catalogueSlider(
+    {required String categoryName, required Function callBack}) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 15),
-    child: catalogueItem('gfgfffg Phones', () => null),
+    // padding: Edgein,
+    margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8.0),
+    child: catalogueItem(categoryName, callBack),
   );
+}
+
+class ProductContainer extends StatelessWidget {
+  const ProductContainer({super.key});
+  final TextStyle labelstyle = const TextStyle(
+    color: Colors.black,
+    fontSize: 15.0,
+    // fontFamily: 'Fira',
+    // fontWeight: FontWeight.bold,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(10.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Container(
+                height: 280.0,
+                width: 180.0,
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              IconButton(
+                  onPressed: () => null,
+                  icon: Icon(
+                    Ionicons.heart,
+                    color: Color.fromARGB(244, 248, 210, 116),
+                  )),
+            ],
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'data',
+                  style: labelstyle,
+                ),
+                Text(
+                  '\$6356',
+                  style: labelstyle.copyWith(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

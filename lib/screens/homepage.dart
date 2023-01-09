@@ -11,10 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool mostPopularButtonSeeAll = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -67,21 +68,91 @@ class _HomePageState extends State<HomePage> {
           SliverToBoxAdapter(
             child: Container(
                 // color: Colors.green,
-                padding: EdgeInsets.all(10),
-                height: 60.0,
+                padding: const EdgeInsets.all(5.0),
+                height: 70.0,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return catalogueSlider();
-                  },
+                  // addRepaintBoundaries: true,
+                  itemBuilder: (context, index) => catalogueSlider(
+                    categoryName: 'gfgfffg Phones',
+                    callBack: () => null,
+                  ),
                   scrollDirection: Axis.horizontal,
-                  itemCount: 80,
+                  itemCount: 8,
+                  physics: const BouncingScrollPhysics(),
                 )),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 350.0,
+              // padding: const EdgeInsets.all(8.0),
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                itemBuilder: (context, index) => ProductContainer(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                physics: const BouncingScrollPhysics(),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Most Popular',
+                    style: TextStyle(
+                        fontFamily: 'Bowlby', fontSize: 20.0, height: 2.2),
+                  ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: TextButton(
+                      onPressed: () {
+                        setState(() {
+                          if (mostPopularButtonSeeAll) {
+                            mostPopularButtonSeeAll = false;
+                          } else {
+                            mostPopularButtonSeeAll = true;
+                          }
+                        });
+                        print(mostPopularButtonSeeAll);
+                      },
+                      child: const Text(
+                        'See all',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 350.0,
+              // padding: const EdgeInsets.all(8.0),
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                itemBuilder: (context, index) => ProductContainer(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                physics: const BouncingScrollPhysics(),
+              ),
+            ),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return Text('data');
+                return Text(
+                  'data',
+                  style: TextStyle(fontSize: 15.0),
+                );
               },
               childCount: 80,
             ),
