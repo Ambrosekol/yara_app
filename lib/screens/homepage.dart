@@ -19,52 +19,56 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-              centerTitle: true,
-              title: const Text(
-                'YARA',
-                style: TextStyle(color: Colors.black, fontFamily: 'Rubik'),
+            centerTitle: true,
+            title: const Text(
+              'YARA',
+              style: TextStyle(color: Colors.black, fontFamily: 'Rubik'),
+            ),
+            backgroundColor: Colors.white,
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Ionicons.menu_outline,
+                color: Colors.black,
               ),
-              backgroundColor: Colors.white,
-              leading: IconButton(
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Ionicons.search, color: Colors.black),
+              ),
+              IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Ionicons.menu_outline,
+                  Ionicons.bag_handle,
                   color: Colors.black,
                 ),
               ),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Ionicons.search, color: Colors.black),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Ionicons.bag_handle,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-              floating: true,
-              expandedHeight: MediaQuery.of(context).size.height / 2.5,
-              flexibleSpace: FlexibleSpaceBar(
-                background: flexibleSpaceWidget(
-                  context,
-                  'Welcome',
-                  backgroundImage: 'assets/images/banner_image.jpg',
-                  percentageOff: '25% OFF',
-                  promodate: 'Dec 16 - Dec 31',
-                  dateColor: Colors.white,
-                  percentageColor: Colors.black,
-                  titleColor: Colors.white,
-                  buttonColor: Colors.black,
-                  //need to face this
-                  callback: () => print('object'),
-                  discountTitle: 'Super discount',
-                  buttonText: 'Grab Now!',
-                  buttonTextColor: Colors.white,
-                ),
-              )),
+            ],
+            floating: true,
+            // pinned: true,
+            expandedHeight: 10.0,
+            // flexibleSpace: FlexibleSpaceBar(background: Text('Welcome')),
+          ),
+          SliverToBoxAdapter(
+            child: flexibleSpaceWidget(
+              context,
+              'Welcome',
+              addWelcomeMessage: true,
+              backgroundImage: 'assets/images/banner_image.jpg',
+              percentageOff: '25% OFF',
+              promodate: 'Dec 16 - Dec 31',
+              dateColor: Colors.white,
+              percentageColor: Colors.black,
+              titleColor: Colors.white,
+              buttonColor: Colors.black,
+              //need to face this
+              callback: () => print('object'),
+              discountTitle: 'Super discount',
+              buttonText: 'Grab Now!',
+              buttonTextColor: Colors.white,
+            ),
+          ),
           SliverToBoxAdapter(
             child: Container(
                 // color: Colors.green,
@@ -133,16 +137,54 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          mostPopularButtonSeeAll
+              ? SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => ProductContainer(),
+                    childCount: 20,
+                  ),
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200.0,
+                    // crossAxisSpacing: 150.0,
+                    mainAxisExtent: MediaQuery.of(context).size.height * 0.45,
+                  ),
+                )
+              : SliverToBoxAdapter(
+                  child: Container(
+                    height: 350.0,
+                    // padding: const EdgeInsets.all(8.0),
+                    width: MediaQuery.of(context).size.width,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) => ProductContainer(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 8,
+                      physics: const BouncingScrollPhysics(),
+                    ),
+                  ),
+                ),
           SliverToBoxAdapter(
             child: Container(
-              height: 350.0,
-              // padding: const EdgeInsets.all(8.0),
-              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 3.3,
+              // alignment: Alignment.topCenter,
               child: ListView.builder(
-                itemBuilder: (context, index) => ProductContainer(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 8,
-                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => flexibleSpaceWidget(
+                  context,
+                  'Welcome',
+                  addWelcomeMessage: false,
+                  backgroundImage: 'assets/images/banner_image.jpg',
+                  percentageOff: '25% OFF',
+                  promodate: 'Dec 16 - Dec 31',
+                  dateColor: Colors.white,
+                  percentageColor: Colors.black,
+                  titleColor: Colors.white,
+                  buttonColor: Colors.black,
+                  //need to face this
+                  callback: () => print('object'),
+                  discountTitle: 'Super discount',
+                  buttonText: 'Grab Now!',
+                  buttonTextColor: Colors.white,
+                ),
               ),
             ),
           ),

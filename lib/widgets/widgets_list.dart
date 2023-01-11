@@ -54,10 +54,12 @@ class ProductContainer extends StatelessWidget {
             children: [
               Container(
                 height: 280.0,
-                width: 180.0,
+                width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(30.0)),
+
+                ///child missing
               ),
               IconButton(
                   onPressed: () => null,

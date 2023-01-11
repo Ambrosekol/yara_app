@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 Widget flexibleSpaceWidget(
   BuildContext context,
   String welcomeMessage, {
+  required bool addWelcomeMessage,
   required String backgroundImage,
   required String percentageOff,
   required String promodate,
@@ -16,24 +18,27 @@ Widget flexibleSpaceWidget(
   required Color buttonTextColor,
 }) {
   return Container(
+    // color: Colors.amber,
     padding: const EdgeInsets.all(10.0),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            welcomeMessage,
-            style: const TextStyle(
-                fontSize: 30.0,
-                fontFamily: 'Abel',
-                fontWeight: FontWeight.bold),
-          ),
-        ),
+        addWelcomeMessage
+            ? Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  welcomeMessage,
+                  style: const TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Abel',
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            : SizedBox(),
         Container(
           padding: const EdgeInsets.all(17.0),
           margin: const EdgeInsets.all(8.0),
-          width: MediaQuery.of(context).size.width,
+          width: MediaQuery.of(context).size.width / 1.2,
           height: MediaQuery.of(context).size.height * 0.24,
           decoration: BoxDecoration(
               boxShadow: const [
