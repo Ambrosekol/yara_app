@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
             titleColor: Colors.black,
             buttonColor: Color.fromARGB(255, 236, 112, 10),
             //need to face this
-            callback: () => print('object'),
+            callback: () => print('yes'),
             discountTitle: 'Super discount',
             buttonText: 'Grab Now!',
             buttonTextColor: Colors.white,
