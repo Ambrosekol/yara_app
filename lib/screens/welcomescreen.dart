@@ -16,130 +16,128 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-          // gradient: LinearGradient(
-          //     stops: [0.2, 0.7],
-          //     begin: Alignment.topCenter,
-          //     end: Alignment.bottomCenter,
-          //     colors: [Color.fromARGB(79, 83, 80, 80), Colors.black]),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/images/woman.jpg'),
-          ),
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+        // gradient: LinearGradient(
+        //     stops: [0.2, 0.7],
+        //     begin: Alignment.topCenter,
+        //     end: Alignment.bottomCenter,
+        //     colors: [Color.fromARGB(79, 83, 80, 80), Colors.black]),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage('assets/images/woman.jpg'),
         ),
-        child: Stack(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    stops: [0.3, 0.6],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color.fromARGB(0, 35, 34, 34),
-                      Color.fromARGB(230, 0, 0, 0),
-                    ]),
-              ),
+      ),
+      child: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  stops: [0.3, 0.6],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(0, 35, 34, 34),
+                    Color.fromARGB(230, 0, 0, 0),
+                  ]),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                padding: const EdgeInsets.all(10.0),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.65,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Welcome to ',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontFamily: 'Dongle'),
-                        ),
-                        appName,
-                      ],
-                    ),
-                    const SizedBox(height: 20.0),
-                    const Text(
-                      'Your number 1 Mobile Shopping \n Platform',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontFamily: 'Dongle',
-                        height: 0.7,
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: const EdgeInsets.all(10.0),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.65,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Welcome to ',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontFamily: 'Dongle'),
                       ),
+                      appName,
+                    ],
+                  ),
+                  const SizedBox(height: 20.0),
+                  const Text(
+                    'Your number 1 Mobile Shopping \n Platform',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontFamily: 'Dongle',
+                      height: 0.7,
                     ),
-                    const SizedBox(height: 40.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          Icons.remove,
-                          color: Colors.white,
-                          size: 25.0,
-                        ),
-                        Icon(
-                          Icons.circle,
-                          color: Colors.white,
-                          size: 15.0,
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 90.0),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => LoginScreen()));
-                              },
-                              child: const Text(
-                                'Skip',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 17.0),
-                              )),
-                          InkWell(
-                            onTap: () => Navigator.pushNamed(
-                                context, 'secondWelcomeScreen'),
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromARGB(255, 255, 184, 4),
-                              ),
-                              height: 35.0,
-                              width: 35.0,
-                              child: const Center(
-                                child: Icon(
-                                  Icons.chevron_right,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
+                  ),
+                  const SizedBox(height: 40.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                        size: 25.0,
+                      ),
+                      Icon(
+                        Icons.circle,
+                        color: Colors.white,
+                        size: 15.0,
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 90.0),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                            },
+                            child: const Text(
+                              'Skip',
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 17.0),
+                            )),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(
+                              context, 'secondWelcomeScreen'),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromARGB(255, 255, 184, 4),
+                            ),
+                            height: 35.0,
+                            width: 35.0,
+                            child: const Center(
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: Colors.white,
+                                size: 30.0,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

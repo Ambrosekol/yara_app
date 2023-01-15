@@ -38,8 +38,8 @@ Widget flexibleSpaceWidget(
         Container(
           padding: const EdgeInsets.all(17.0),
           margin: const EdgeInsets.all(8.0),
-          width: MediaQuery.of(context).size.width / 1.2,
-          height: MediaQuery.of(context).size.height * 0.24,
+          width: 350,
+          height: 200,
           decoration: BoxDecoration(
               boxShadow: const [
                 BoxShadow(

@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 30.0),
                 InkWell(
-                  onTap: () => null,
+                  onTap: () => Navigator.popAndPushNamed(context, 'homePage'),
                   // Navigator.pushReplacement(context,
                   //     MaterialPageRoute(builder: (context) => LoginScreen())),
                   child: Container(

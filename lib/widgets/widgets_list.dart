@@ -56,7 +56,7 @@ class ProductContainer extends StatelessWidget {
                 height: 280.0,
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.grey,
                     borderRadius: BorderRadius.circular(30.0)),
 
                 ///child missing
@@ -69,20 +69,19 @@ class ProductContainer extends StatelessWidget {
                   )),
             ],
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'data',
-                  style: labelstyle,
-                ),
-                Text(
-                  '\$6356',
-                  style: labelstyle.copyWith(fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
+          const SizedBox(height: 10.0),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'data',
+                style: labelstyle,
+              ),
+              Text(
+                '\$6356',
+                style: labelstyle.copyWith(fontWeight: FontWeight.bold),
+              )
+            ],
           ),
         ],
       ),
