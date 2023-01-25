@@ -112,8 +112,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   color: Colors.white, fontSize: 17.0),
                             )),
                         InkWell(
-                          onTap: () => Navigator.pushNamed(
-                              context, 'secondWelcomeScreen'),
+                          onTap: () =>
+                              Navigator.of(context).push(_createRoute()),
                           child: Container(
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
@@ -141,6 +141,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+      pageBuilder: ((context, animation, secondaryAnimation) => SecondScreen()),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 2.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(position: animation.drive(tween), child: child);
+      });
 }
 
 class SecondScreen extends StatefulWidget {
