@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         SliverToBoxAdapter(
           child: Container(
-            height: 350.0,
+            height: 210.0,
             // padding: const EdgeInsets.all(8.0),
             width: MediaQuery.of(context).size.width,
             child: ListView.builder(
@@ -178,12 +178,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 200.0,
                   // crossAxisSpacing: 150.0,
-                  mainAxisExtent: MediaQuery.of(context).size.height * 0.45,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.30,
                 ),
               )
             : SliverToBoxAdapter(
                 child: Container(
-                  height: 350.0,
+                  height: 210.0,
                   // padding: const EdgeInsets.all(8.0),
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
@@ -282,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 200.0,
                   // crossAxisSpacing: 150.0,
-                  mainAxisExtent: MediaQuery.of(context).size.height * 0.45,
+                  mainAxisExtent: MediaQuery.of(context).size.height * 0.30,
                 ),
               )
             : SliverToBoxAdapter(

@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: brandColor,
       body: FutureBuilder(
         // initialData: appScreens[0],
         builder: (context, snapshot) {

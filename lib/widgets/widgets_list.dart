@@ -56,14 +56,14 @@ class ProductContainer extends StatelessWidget {
             alignment: Alignment.topRight,
             children: [
               Container(
-                height: 250.0,
+                height: 150.0,
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Color.fromARGB(255, 191, 138, 3)),
+                    // border: Border.all(color: Color.fromARGB(255, 191, 138, 3)),
                     image: DecorationImage(
                         fit: BoxFit.contain,
                         image: NetworkImage(productList[index].images![0])),
-                    // color: Colors.grey,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(30.0)),
 
                 ///child missing
