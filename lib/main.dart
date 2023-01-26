@@ -1,6 +1,4 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:yara_app/screens/forgot_password.dart';
 import 'package:yara_app/screens/inAppNavScreens.dart';
 import 'package:yara_app/screens/loginscreen.dart';

@@ -1,20 +1,19 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+// import 'package:http/http.dart' as http;
 import 'package:yara_app/util/models.dart';
 
 class ApiCall {
   String url = 'https://dummyjson.com/products';
   Future<ProductsData> getProductsData() async {
-    var initDio = Uri.parse(url);
-    var response = await http.get(initDio);
-    // print(response.data);
-    // if (response.) {
-    var mydata = jsonDecode(response.body);
-    // print(mydata);
-    return ProductsData.fromJson(mydata);
-    // } else {
-    //   throw Exception(response.statusMessage);
-    // }
+    var initDio = Dio();
+    var response = await initDio.get(url);
+    print(response.data);
+    if (response.statusCode == 200) {
+      return ProductsData.fromJson(response.data);
+    } else {
+      throw Exception(response.statusMessage);
+    }
   }
 }

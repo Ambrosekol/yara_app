@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:yara_app/util/models.dart';
 
 import '../widgets/flexiblespacewidget.dart';
 import '../widgets/widgets_list.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({this.productsData, super.key});
+  final ProductsData? productsData;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
