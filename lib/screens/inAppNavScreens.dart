@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         return HomeScreen(
           productsData: data,
         );
-      } else if (appScreens[i] == appScreens[screenController]) {
+      } else if (appScreens[1] == appScreens[screenController]) {
         return SearchScreen();
       } else {
         return Center(child: Text('No Data'));

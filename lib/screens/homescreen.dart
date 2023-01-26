@@ -16,6 +16,29 @@ class _HomeScreenState extends State<HomeScreen> {
   Color brandColor = const Color.fromARGB(255, 255, 184, 4);
   bool mostPopularButtonSeeAll = false;
   bool happySaleButtonSeeAll = false;
+  List<Products> productInstanceList = [];
+  List<String> unprocessedCategoryList = [];
+  List<String> processedCatrgoryList = [];
+
+  @override
+  void initState() {
+    populateCategories();
+    super.initState();
+  }
+
+  void populateCategories() {
+    // print(widget.productsData!.products![0].brand);
+    for (var i = 0; i < widget.productsData!.products!.length; i++) {
+      productInstanceList.add(widget.productsData!.products![i]);
+    }
+    for (var i = 0; i < productInstanceList.length; i++) {
+      unprocessedCategoryList.add(productInstanceList[i].category.toString());
+    }
+    processedCatrgoryList = unprocessedCategoryList.toSet().toList();
+    print(processedCatrgoryList);
+    // print(productInstanceList[0].brand);
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -85,11 +108,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.builder(
                 // addRepaintBoundaries: true,
                 itemBuilder: (context, index) => catalogueSlider(
-                  categoryName: 'gfgfffg Phones',
+                  categoryName: processedCatrgoryList[index],
                   callBack: () => null,
                 ),
                 scrollDirection: Axis.horizontal,
-                itemCount: 8,
+                itemCount: processedCatrgoryList.length,
                 physics: const BouncingScrollPhysics(),
               )),
         ),
@@ -99,7 +122,8 @@ class _HomeScreenState extends State<HomeScreen> {
             // padding: const EdgeInsets.all(8.0),
             width: MediaQuery.of(context).size.width,
             child: ListView.builder(
-              itemBuilder: (context, index) => ProductContainer(),
+              itemBuilder: (context, index) =>
+                  ProductContainer(productInstanceList, index),
               scrollDirection: Axis.horizontal,
               itemCount: 8,
               physics: const BouncingScrollPhysics(),
@@ -147,8 +171,9 @@ class _HomeScreenState extends State<HomeScreen> {
         mostPopularButtonSeeAll
             ? SliverGrid(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => ProductContainer(),
-                  childCount: 10,
+                  (context, index) =>
+                      ProductContainer(productInstanceList, index),
+                  childCount: 30,
                 ),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 200.0,
@@ -162,9 +187,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   // padding: const EdgeInsets.all(8.0),
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                    itemBuilder: (context, index) => ProductContainer(),
+                    itemBuilder: (context, index) =>
+                        ProductContainer(productInstanceList, index),
                     scrollDirection: Axis.horizontal,
-                    itemCount: 8,
+                    itemCount: 10,
                     physics: const BouncingScrollPhysics(),
                   ),
                 ),
@@ -249,7 +275,8 @@ class _HomeScreenState extends State<HomeScreen> {
         happySaleButtonSeeAll
             ? SliverGrid(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => ProductContainer(),
+                  (context, index) =>
+                      ProductContainer(productInstanceList, index),
                   childCount: 10,
                 ),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -264,7 +291,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   // padding: const EdgeInsets.all(8.0),
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                    itemBuilder: (context, index) => ProductContainer(),
+                    itemBuilder: (context, index) =>
+                        ProductContainer(productInstanceList, index),
                     scrollDirection: Axis.horizontal,
                     itemCount: 8,
                     physics: const BouncingScrollPhysics(),

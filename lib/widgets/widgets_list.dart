@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:yara_app/util/models.dart';
 
 Widget catalogueItem(String name, Function callback) {
   return ElevatedButton(
@@ -34,7 +35,9 @@ Widget catalogueSlider(
 }
 
 class ProductContainer extends StatelessWidget {
-  const ProductContainer({super.key});
+  const ProductContainer(this.productList, this.index, {super.key});
+  final List<Products> productList;
+  final int index;
   final TextStyle labelstyle = const TextStyle(
     color: Colors.black,
     fontSize: 15.0,
@@ -53,10 +56,14 @@ class ProductContainer extends StatelessWidget {
             alignment: Alignment.topRight,
             children: [
               Container(
-                height: 280.0,
+                height: 250.0,
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    border: Border.all(color: Color.fromARGB(255, 191, 138, 3)),
+                    image: DecorationImage(
+                        fit: BoxFit.contain,
+                        image: NetworkImage(productList[index].images![0])),
+                    // color: Colors.grey,
                     borderRadius: BorderRadius.circular(30.0)),
 
                 ///child missing
@@ -74,11 +81,13 @@ class ProductContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'data',
+                productList[index].title.toString(),
+                textAlign: TextAlign.center,
                 style: labelstyle,
               ),
               Text(
-                '\$6356',
+                '\$${productList[index].price.toString()}',
+                textAlign: TextAlign.center,
                 style: labelstyle.copyWith(fontWeight: FontWeight.bold),
               )
             ],
